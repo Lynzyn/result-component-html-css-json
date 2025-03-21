@@ -34,6 +34,7 @@ body {
     text-align: center;
     padding: 20px;
     justify-items: center;
+    justify-content: center;
     border-radius: 24px;
 }
 
@@ -146,3 +147,4 @@ a:hover {
         width: 100%;
     }
 }
+
