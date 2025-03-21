@@ -1,124 +1,148 @@
-@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap');
-*{
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@100..900&display=swap');
+
+* {
     padding: 0;
     margin: 0;
     font-family: "Hanken Grotesk", sans-serif;
-    font-weight:bold ;
+    font-weight: bold;
+    box-sizing: border-box;
 }
-body{
+
+body {
     background-color: hsl(221, 100%, 96%);
+    display: flex;
     justify-content: center;
     align-items: center;
-    display: flex;
     min-height: 100vh;
+    padding: 20px;
 }
-.card{
+
+.card {
     background-color: hsl(0, 0%, 100%);
     display: flex;
+    flex-direction: row;
     border-radius: 16px;
     overflow: hidden;
-    width: 45%;
+    max-width: 600px;
+    width: 100%;
 }
-.left-card{
+
+.left-card {
     width: 50%;
     color: hsl(241, 100%, 89%);
-    background-image: linear-gradient(hsl(252, 100%, 67%),hsl(241, 81%, 54%));
-    justify-items: center;
+    background-image: linear-gradient(hsl(252, 100%, 67%), hsl(241, 81%, 54%));
     text-align: center;
-    border-radius: 20px;
-    
+    padding: 20px;
+    justify-items: center;
+    border-radius: 24px;
 }
- .left-card h1 ,.left-card h2{
+
+.left-card h1,
+.left-card h2 {
     color: white;
 }
-li{
+
+.result {
+    background-image: linear-gradient(hsla(256, 72%, 46%, 1), hsla(241, 72%, 46%, 0));
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    padding: 2.5rem;
+    margin-bottom: 1rem;
+}
+.left-card h4{
+    margin-bottom: 2rem;
+}
+h2{
+    margin-bottom: 1rem;
+}
+.result h1 {
+    font-size: 2rem;
+}
+
+.left-card p {
+    padding: 0.2rem;
+    font-size: 18px;
+}
+
+.right-card {
+    width: 50%;
+    padding: 20px;
+}
+
+.right-card h4 {
+    margin-bottom: 1rem;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
     margin-bottom: 1rem;
     padding: 1rem;
-    
-}
-.detail{
-    float: right;
-    margin-left: 5.5rem;
-    color: black;
-}
-.Reaction{
-    background-color: hsla(0, 100%, 67%, 0.068);
     border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.Reaction {
+    background-color: hsla(0, 100%, 67%, 0.1);
     color: hsl(0, 100%, 67%);
 }
-.Memory{
-    background-color: hsl(39, 100%, 56%,0.068);
-    border-radius: 10px;
+
+.Memory {
+    background-color: hsla(39, 100%, 56%, 0.1);
     color: hsl(39, 100%, 56%);
 }
-.Verbal{
-    background-color: hsl(166, 100%, 37%,0.068);
-    border-radius: 10px;
+
+.Verbal {
+    background-color: hsla(166, 100%, 37%, 0.1);
     color: hsl(166, 100%, 37%);
 }
-.Visual{
-    background-color: hsl(234, 85%, 45%,0.068);
-    border-radius: 10px;
+
+.Visual {
+    background-color: hsla(234, 85%, 45%, 0.1);
     color: hsl(234, 85%, 45%);
 }
-.icon{
-    vertical-align: text-top;
+
+.icon {
     margin-right: 0.6rem;
 }
-ul{
-    list-style: none;
-    margin-bottom: 3rem;
-}
-h4{
-    margin-bottom: 2rem;
-    margin-top: 2rem;
-    font-size: 1.2rem;
-}
-.result{
-    background-image: linear-gradient(hsla(256, 72%, 46%, 1),hsla(241, 72%, 46%, 0));
-    border-radius: 50%;
-    width: 25%;
-    padding: 2rem;
-    margin-bottom: 2.5rem;
-}
-.result h1{
-    font-size: 3rem;
-}
-.left-card h2{
-    margin-bottom: 1rem;
-}
-p{
-    font-size: 18px;
-    font-weight: 500;
-}
-.left-card p{
-    width: 70%;
-    margin-bottom: 4rem;
-}
-.right-card{
-    margin-left: 0.5rem;
-    width: 50%;
-    
-}
-.right-card h4{
-    margin-left: 2rem;
-}
-a{
-    margin-bottom: 5rem;
-    background-color:hsl(224, 30%, 27%);
-    padding: 0.8rem;
-    padding-left: 6rem;
-    padding-right: 6rem;
+
+a {
+    display: block;
+    text-align: center;
+    background-color: hsl(224, 30%, 27%);
+    padding: 10px;
     border-radius: 24px;
     color: white;
-    cursor: pointer;
+    text-decoration: none;
+    margin-top: 1rem;
+    width: 100%;
 }
-a:hover{
+
+a:hover {
     background-color: hsl(241, 81%, 54%);
 }
-.test{
-    justify-items: center;
-}
-.score{
-    color: grey;   
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    body{
+        padding: 0;
+        margin: 0;
+    }
+    .card{
+        flex-direction: column;
+        overflow: visible;
+    }
+    .left-card{
+        width: 100%;
+        border-radius: 0 0 24px 30px;
+    }
+    .right-card{
+        width: 100%;
+    }
 }
