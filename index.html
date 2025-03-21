@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="index.css">
+  
+  <title>Frontend Mentor | Results summary component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+  
+  
+</head>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    fetch("data.json")
+      .then(response => response.json())
+      .then(data => {
+        const ul = document.querySelector(".test ul");
+        ul.innerHTML = ""; // Clear existing list items
+
+        data.forEach(item => {
+          const li = document.createElement("li");
+          li.classList.add(item.category);
+
+          li.innerHTML = `
+            <img src="${item.icon}" class="icon"> ${item.category} 
+            <span class="detail">${item.score} <span class="score">/ 100 </span></span>
+          `;
+
+          ul.appendChild(li);
+        });
+      })
+      .catch(error => console.error("Error loading data:", error));
+  });
+</script>
+<body>
+  <div class="card">
+    <div class="left-card">
+        <h4>Your Result</h4>
+        <div class="result">
+          <h1>76</h1>
+          <span>of 100</span>
+        </div>
+        <h2>Great</h2>
+        <p>You scored higher than 65% of the people who have taken these tests.</p>
+    </div>
+    <div class="right-card">
+      <h4>Summary</h4>
+      <div class="test">
+        <ul>
+        </ul>
+        <a>Continue</a>
+      </div>
+      
+    </div>
+  </div>
+</body>
+</html>
