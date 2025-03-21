@@ -36,6 +36,9 @@ body {
     justify-items: center;
     justify-content: center;
     border-radius: 24px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
 .left-card h1,
